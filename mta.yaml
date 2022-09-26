@@ -23,3 +23,12 @@ modules:
       - name: srv-api # required by consumers of CAP services (e.g. approuter)
         properties:
           srv-url: ${default-url}
+
+resources:
+  - name: hana-db-test
+    type: com.sap.xs.hdi-container
+    parameters:
+      service: hanatrial
+      service-plan: hana
+    properties:
+      hdi-service-name: ${service-name}
